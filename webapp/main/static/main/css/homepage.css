@@ -19,35 +19,7 @@ body {
     color: #3f3f3f;
     font-family: 'Arial', sans-serif;
     font-size: 2.5rem;
-    margin-top: 30px;
-    animation: changeColor 3s infinite alternate, shadowEffect 2s infinite; /* alternate makes it go in reverse later */
-}
-
-@keyframes changeColor {
-    0% {
-        color: #2c3e50; /* Initial color */
-    }
-    40% {
-        color: #3498db; /* Color at the middle */
-    }
-    70% {
-        color: rgb(241, 199, 9)
-    }
-    100% {
-        color: #e74c3c; /* Color at the end */
-    }
-}
-
-@keyframes shadowEffect {
-    0% {
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    50% {
-        text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    }
-    100% {
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    }
+    margin-top: 30px
 }
 
 /* Headings */
