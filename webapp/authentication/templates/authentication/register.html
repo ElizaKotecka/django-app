@@ -3,5 +3,10 @@
 {% block title%}Register{% endblock %}
 
 {% block content%}
-    Work in progress
+    <h1>Register</h1>
+    <form action="/register/" method="post">
+        {{ form }}
+        <button>Submit</button>
+        {% csrf_token %}
+    </form>
 {% endblock %}
