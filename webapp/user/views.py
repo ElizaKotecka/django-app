@@ -15,7 +15,7 @@ def register(request):
     else:
         return HttpResponseNotAllowed(permitted_methods=['GET', 'POST'])
     
-    return render(request,'authentication/register.html', {'form':form})
+    return render(request,'auth/register.html', {'form':form})
 
 
 def login(request):
@@ -28,4 +28,4 @@ def login(request):
     else:
         return HttpResponseNotAllowed(permitted_methods=['GET', 'POST'])
     
-    return render(request,'authentication/login.html', {'form':form})
+    return render(request,'auth/login.html', {'form':form})
