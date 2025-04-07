@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.http import HttpResponseNotAllowed
+from django.contrib import messages
 
 # Create your views here.
 def register(request):
@@ -11,5 +13,19 @@ def register(request):
     elif request.method == "GET":
         form = UserCreationForm()
     else:
-        return('Something get wrong.')
-    return render(request,'authentication/register.html', {'form':form}) 
+        return HttpResponseNotAllowed(permitted_methods=['GET', 'POST'])
+    
+    return render(request,'authentication/register.html', {'form':form})
+
+
+def login(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(data = request.POST)
+        if form.is_valid():
+            return redirect('home')
+    elif request.method == 'GET':
+        form = AuthenticationForm()
+    else:
+        return HttpResponseNotAllowed(permitted_methods=['GET', 'POST'])
+    
+    return render(request,'authentication/login.html', {'form':form})
