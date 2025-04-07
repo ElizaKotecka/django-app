@@ -14,7 +14,6 @@ def register(request):
         form = UserCreationForm()
     else:
         return HttpResponseNotAllowed(permitted_methods=['GET', 'POST'])
-    
     return render(request,'auth/register.html', {'form':form})
 
 

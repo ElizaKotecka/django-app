@@ -25,5 +25,5 @@ urlpatterns = [
     path('', include('main.urls')),
     path('news/', include('news.urls')), 
     path('forum/', include('forum.urls')),
-    path('users/', include('user.urls')), #delegating authority to an internal application
+    path('user/', include('user.urls')), #delegating authority to an internal application
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
