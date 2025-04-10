@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.http import HttpResponseNotAllowed
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
+from django.contrib.auth.decorators import login_required 
 
 # Create your views here.
 def register(request):
@@ -29,3 +30,10 @@ def login_view(request):
         return HttpResponseNotAllowed(permitted_methods=['GET', 'POST'])
     
     return render(request,'auth/login.html', {'form':form})
+
+@login_required
+def logout_view(request):
+    logout(request)
+    return redirect('home')
+
+
