@@ -20,7 +20,7 @@ body {
     font-family: 'Arial', sans-serif;
     font-size: 2.5rem;
     margin-top: 30px;
-    animation: changeColor 3s infinite alternate; /* makes it go in reverse later */
+    animation: changeColor 3s infinite alternate, shadowEffect 2s infinite; /* makes it go in reverse later */
 }
 
 @keyframes changeColor {
@@ -35,6 +35,18 @@ body {
     }
     100% {
         color: #e74c3c; /* Color at the end */
+    }
+}
+
+@keyframes shadowEffect {
+    0% {
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     }
 }
 
