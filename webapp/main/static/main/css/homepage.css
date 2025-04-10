@@ -14,6 +14,30 @@ body {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Best Deals */
+.best-deals-title {
+    color: #3f3f3f;
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem;
+    margin-top: 30px;
+    animation: changeColor 3s infinite alternate; /* makes it go in reverse later */
+}
+
+@keyframes changeColor {
+    0% {
+        color: #2c3e50; /* Initial color */
+    }
+    40% {
+        color: #3498db; /* Color at the middle */
+    }
+    70% {
+        color: rgb(241, 199, 9)
+    }
+    100% {
+        color: #e74c3c; /* Color at the end */
+    }
+}
+
 /* Headings */
 h1, h2 {
     color: #222; /* Dark gray for contrast */
@@ -21,7 +45,7 @@ h1, h2 {
 
 /* Buttons */
 .btn-primary {
-    background-color: #007bff; /* Blue */
+    background-color: #1775da; /* Blue */
     border: none;
     padding: 12px 20px;
     font-size: 18px;
@@ -30,11 +54,11 @@ h1, h2 {
 }
 
 .btn-primary:hover {
-    background-color: #0056b3; /* Darker blue */
+    background-color: #094280; /* Darker blue */
 }
 
 .btn-warning {
-    background-color: #ff9800; /* Orange */
+    background-color: #ffaa29; /* Orange */
     border: none;
     padding: 10px 16px;
     border-radius: 5px;
@@ -59,7 +83,7 @@ h1, h2 {
 
 /* Reviews Section */
 .bg-light.py-5 {
-    background-color: #f8f9fa; /* Soft gray background */
+    background-color: #f8f9fa;
     padding: 50px 0;
     border-radius: 10px;
 }
@@ -71,7 +95,7 @@ h1, h2 {
 
 /* About Us Button */
 .btn-secondary {
-    background-color: #6c757d;
+    background-color: #738391;
     border: none;
     padding: 12px 20px;
     border-radius: 5px;
