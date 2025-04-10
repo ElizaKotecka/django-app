@@ -3,6 +3,9 @@
 {% block title%}Homepage{% endblock %}
 
 {% block content%}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+
     <h1>Homepage</h1>
     <div class="container text-center mt-4">
         <!--Welcome message -->
@@ -10,9 +13,11 @@
             <h1 class="display-4">Welcome to Our Marketplace!</h1>
             <p class="lead">Find the best deals on thousands of products from verified sellers.</p>
             <a href="/forum" class="btn btn-primary btn-lg">Browse Products</a> <!--This line can be changed if we change the forum name!!-->
+        </div>
     </div>
 
     <!-- Featured Products Section -->
+    <h2 class="text-center">Check out Our best deals!</h2>
     <div class="row mt-5">
         <div class="col-md-4">
             <div class="card">
@@ -49,7 +54,7 @@
     <!-- Reviews -->
     <div class="mt-5 bg-light py-5">
         <h2 class="text-center">What Our Users Are Saying</h2>
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
