@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.http import HttpResponseNotAllowed
-from django.contrib import messages
+from django.contrib.auth import login
 
 # Create your views here.
 def register(request):
@@ -17,10 +17,11 @@ def register(request):
     return render(request,'auth/register.html', {'form':form})
 
 
-def login(request):
+def login_view(request):
     if request.method == 'POST':
         form = AuthenticationForm(data = request.POST)
         if form.is_valid():
+            login(request, form.get_user())
             return redirect('home')
     elif request.method == 'GET':
         form = AuthenticationForm()
