@@ -34,7 +34,7 @@ def marketplace_create(request):
 class PostDetailView(DetailView):
     model = Posts
     template_name = 'marketplace/show.html'
-    context_object_name = 'article'
+    context_object_name = 'post'
 
 class PostUpdateView(UpdateView):
     model = Posts
