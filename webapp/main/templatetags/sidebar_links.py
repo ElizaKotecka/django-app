@@ -17,12 +17,12 @@ def get_links():
         'href': '/about',
         'icon': 'fa-address-card',
     },{
-        'name': 'News',
-        'href': '/news/',
+        'name': 'Marketplace',
+        'href': '/marketplace/',
         'icon': 'fa-newspaper',
     },{
-        'name': 'Add news',
-        'href': '/news/create',
+        'name': 'Add post',
+        'href': '/marketplace/create',
         'icon': 'fa-plus',
     },{
         'name': 'Forum',

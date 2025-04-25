@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import DetailView, UpdateView, DeleteView
+from django.contrib.auth.decorators import login_required 
 
 from .models import Posts
 from .forms import PostsForm
@@ -7,9 +8,10 @@ from .forms import PostsForm
 # Create your views here.
 
 def marketplace_home(request):
-    news = Posts.objects.all().order_by('-published_at')
-    return render(request, 'news/index.html', {'news': news})
+    posts = Posts.objects.all().order_by('-published_at')
+    return render(request, 'marketplace/index.html', {'posts': posts})
 
+@login_required(login_url='/user/login/')
 def marketplace_create(request):
     error = ''
 
@@ -17,7 +19,7 @@ def marketplace_create(request):
         form = PostsForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('news_home')
+            return redirect('marketplace_home')
         else:
             error = 'Submitted form contain errors'
 
@@ -27,19 +29,19 @@ def marketplace_create(request):
         'form': form,
         'error': error,
     }
-    return render(request, 'news/create.html', data)
+    return render(request, 'marketplace/create.html', data)
 
-class NewsDetailView(DetailView):
+class PostDetailView(DetailView):
     model = Posts
-    template_name = 'news/show.html'
+    template_name = 'marketplace/show.html'
     context_object_name = 'article'
 
-class NewsUpdateView(UpdateView):
+class PostUpdateView(UpdateView):
     model = Posts
-    template_name = 'news/update.html'
+    template_name = 'marketplace/update.html'
     form_class = PostsForm
 
-class NewsDeleteView(DeleteView):
+class PostDeleteView(DeleteView):
     model = Posts
-    template_name = 'news/delete.html'
-    success_url = '/news/'
+    template_name = 'marketplace/delete.html'
+    success_url = '/marketplace/'
