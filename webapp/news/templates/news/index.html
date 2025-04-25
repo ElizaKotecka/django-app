@@ -1,24 +1,24 @@
 {% extends 'main/layout/layout.html' %}
 
-{% block title%}Webpage news{% endblock %}
+{% block title%}Webpage posts{% endblock %}
 
 {% block content%}
-    <h1>News</h1>
+    <h1>Posts</h1>
     <div class="d-flex flex-column gap-4">
-    {% if news %}
+    {% if posts %}
 
-        {% for article in news %}
+        {% for post in posts %}
 
             <div>
-            <h3><a href="/news/{{ article.id }}">{{ article.title }}</a></h3>
-            <p>{{ article.excerpt }}</p>
+            <h3><a href="/marketplace/{{ post.id }}">{{ post.title }}</a></h3>
+            <p>{{ post.excerpt }}</p>
             </div>
 
         {% endfor %}
 
     {% else %}
 
-        <p>No news for now. Come back later!</p>
+        <p>No posts for now. Come back later!</p>
 
     {% endif %}
     </div>
