@@ -29,7 +29,12 @@
     <div class="dropdown">
       <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
         {% if user.is_authenticated %}
-          <img src="https://avatars.githubusercontent.com/u/583231?v=4" alt="User Avatar" width="32" height="32" class="rounded-circle me-2">
+          {% with user.first_name|default:user.username as user_name %}
+            {% with user_name|slice:":1"|lower as first_letter %}
+              <img src="https://ui-avatars.com/api/?name={{ user_name }}&background={{ first_letter|dictsort:"1234567890abcdef"|first }}&color=fff" 
+                  alt="{{ user.username }} Avatar" width="32" height="32" class="rounded-circle me-2">
+            {% endwith %}
+          {% endwith %}
         {% else %}
           <img src="https://ui-avatars.com/api/?name=Guest&background=6c757d&color=fff" alt="Guest Avatar" width="32" height="32" class="rounded-circle me-2">
         {% endif %}
