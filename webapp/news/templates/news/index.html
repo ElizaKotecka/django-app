@@ -5,6 +5,21 @@
 {% block content%}
     <h1>News</h1>
     <div class="d-flex flex-column gap-4">
+    {% if newses %}
 
+        {% for news in newses %}
+
+            <div>
+            <h3><a href="/news/{{ news.id }}">{{ news.title }}</a></h3>
+            <p>{{ news.excerpt }}</p>
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No news for now. Come back later!</p>
+
+    {% endif %}
     </div>
 {% endblock %}

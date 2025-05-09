@@ -1,0 +1,14 @@
+{% extends 'main/layout/layout.html' %}
+
+{% block title%}(#{{ news.id }}) {{ news.title }}{% endblock %}
+
+{% block content%}
+
+    <div class="d-flex justify-content-between align-items-center w-100">
+        <h1>(#{{ news.id }}) {{ news.title }}</h1>
+    </div>
+    <div class="d-flex flex-column gap-4">
+        <p>Published at: {{ news.published_at|date:"d\.m\.Y l" }}</p> 
+        <p>{{ news.body }}</p>
+    </div>
+{% endblock %}
