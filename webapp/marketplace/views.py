@@ -17,6 +17,7 @@ def marketplace_create(request):
     if request.method == 'POST':
         form = PostsForm(request.POST)
         if form.is_valid():
+            form.instance.owner = request.user
             form.save()
             return redirect('marketplace_home')
         else:
