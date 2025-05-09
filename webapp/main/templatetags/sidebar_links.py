@@ -21,8 +21,8 @@ def get_links():
         'href': '/marketplace/',
         'icon': 'fa-newspaper',
     },{
-        'name': 'Forum',
-        'href': '/forum',
+        'name': 'News',
+        'href': '/news',
         'icon': 'fa-comment', #look for your icon here https://fontawesome.com/search?ic=free
     }]
 
@@ -51,8 +51,8 @@ def get_links_authenticated():
         'href': '/marketplace/create',
         'icon': 'fa-plus',
     },{
-        'name': 'Forum',
-        'href': '/forum',
+        'name': 'News',
+        'href': '/news',
         'icon': 'fa-comment', #look for your icon here https://fontawesome.com/search?ic=free
     }]
          
