@@ -1,6 +1,6 @@
 from .models import Posts
 from django.forms import ModelForm, TextInput, DateInput, Textarea
-from django.contrib.auth.models import User
+
 
 class PostsForm(ModelForm):
     class Meta:
@@ -13,5 +13,4 @@ class PostsForm(ModelForm):
             'excerpt': TextInput(attrs={'class': 'form-control', 'placeholder': 'Excerpt'}),
             'body': Textarea(attrs={'class': 'form-control', 'placeholder': 'Post body'}),
             'published_at': DateInput(attrs={'class': 'form-control', 'type':'date'}),
-            'added_by': Posts.owner
         }
