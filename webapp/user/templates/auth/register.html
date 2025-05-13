@@ -9,10 +9,12 @@
 {% endblock %}
 
 {% block content%}
-    <h1>Register</h1>
-    <form action="/user/register/" method="post">
-        {{ form }}
-        <button>Register</button>
-        {% csrf_token %}
-    </form>
+    <div class="register-wrapper">
+        <h1>Register</h1>
+        <form action="/user/register/" method="post">
+            {{ form }}
+            <button>Register</button>
+            {% csrf_token %}
+        </form>
+    </div>
 {% endblock %}
