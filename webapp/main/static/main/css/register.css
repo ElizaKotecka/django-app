@@ -1,5 +1,5 @@
 body {
-    background-color: #f8f9fa;
+    background-color: #f4f4f9; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: flex-start;
@@ -12,9 +12,9 @@ body {
 }
 
 main {
-    flex-grow: 1;  /* Main content takes up remaining space */
+    flex-grow: 1;
     display: flex;
-    justify-content: center;  /* Center the content in the main area */
+    justify-content: center;
     padding: 20px;
 }
 
