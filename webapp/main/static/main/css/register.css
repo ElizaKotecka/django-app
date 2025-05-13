@@ -7,19 +7,18 @@ body {
 
 main {
     display: flex;
-    justify-content: center; /* Center content horizontally */
-    padding: 60px 20px; /* Prevent vertical squish without full screen height */
+    justify-content: center; /* Center horizontally */
+    padding-top: 60px; /* Push content down a bit from the top */
+    width: 100%;
 }
 
 .register-container {
     background-color: white;
-    max-width: 400px;
+    max-width: 500px;
     width: 100%;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
 }
 
 h1 {
@@ -30,8 +29,15 @@ h1 {
 }
 
 form {
+    background-color: white;
+    max-width: 800px;
+    width: 100%; /* Ensure form takes full width up to max-width */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
 }
 
 form .form-group {
@@ -73,7 +79,7 @@ form button:hover {
     font-size: 14px;
 }
 
-/* Responsive adjustments */
+/* Mobile adjustments */
 @media (max-width: 600px) {
     h1 {
         font-size: 1.8rem;
