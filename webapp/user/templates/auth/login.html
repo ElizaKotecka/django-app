@@ -9,10 +9,12 @@
 {% endblock %}
 
 {% block content%}
-    <h1>Login</h1>
-    <form action="/user/login/" method="post">
-        {{ form }}
-        <button>Log in</button>
-        {% csrf_token %}
-    </form>
+    <div class="form-container">
+        <h1>Login</h1>
+        <form action="/user/login/" method="post">
+            {{ form }}
+            <button>Login</button>
+            {% csrf_token %}
+        </form>
+    </div>
 {% endblock %}

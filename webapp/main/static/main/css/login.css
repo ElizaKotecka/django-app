@@ -3,30 +3,6 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-    height: 100vh;
-}
-
-main {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    width: 100%; /* Ensure main takes full width */
-}
-
-form {
-    background-color: white;
-    max-width: 400px;
-    width: 100%; /* Ensure form takes full width up to max-width */
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    margin: 0; /* Remove any top margin */
 }
 
 h1 {
@@ -34,6 +10,24 @@ h1 {
     margin-bottom: 20px;
     font-size: 48px;
     color: #343a40;
+}
+
+.form-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
 }
 
 form .form-group {
@@ -75,9 +69,9 @@ form button:hover {
     font-size: 14px;
 }
 
-/* For mobile */
+/* Mobile adjustments */
 @media (max-width: 600px) {
     h1 {
-        font-size: 1.8rem;  /* Adjust font size for mobile */
+        font-size: 1.8rem;
     }
 }
