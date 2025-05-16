@@ -3,6 +3,13 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.register-wrapper {
+    margin: 0 auto;
 }
 
 h1 {
@@ -15,7 +22,7 @@ h1 {
 form {
     background-color: white;
     max-width: 800px;
-    width: 100%; /* Ensure form takes full width up to max-width */
+    width: 100%;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -61,6 +68,10 @@ form button:hover {
 .form-error {
     color: #dc3545;
     font-size: 14px;
+}
+
+.form-container {
+    margin: 0 auto;
 }
 
 /* Mobile adjustments */
