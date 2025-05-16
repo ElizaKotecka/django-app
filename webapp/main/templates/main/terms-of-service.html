@@ -10,6 +10,63 @@
             gap: 20px;
             justify-content: space-between;
         }
+        .contact-box {
+            border: 1px solid #052983;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+    /*box jak jest zwinięty*/
+        .contact-label {
+            font-style: italic;
+            color: #033393;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+    /*box jak się rozwinie*/
+
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+    /*strzałeczka owo*/
+
+        input[type="checkbox"]:checked + label .arrow {
+            transform: rotate(180deg);
+        }
+    /*strzałeczka robi backflipy hihi*/
+
+        input[type="checkbox"]{
+            display: none;
+        }
+    /*ukrywa boxa*/
+
+        label{
+            font-style: italic;
+            color: blue;
+            cursor: pointer;
+            font-size: large;
+            display: block;
+            margin: 15px 0;
+        }
+    /*wygląd linku zachęcający do kliknięcia*/
+
+        .dane {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            margin-left: 100px;
+        }
+    /*dane są ukrywane na początku*/
+
+        input[type="checkbox"]:checked + label + .dane {
+            max-height: 500px;
+        }
+
         .button {
             text-align: center;
         }
@@ -301,13 +358,49 @@
 
 
         <h2 id="FAQ" style="text-align: center;">Frequently Asked Questions</h2>
+
         <br><br>
 
         <div class="button">
             <a class="btn btn-primary btn-lg">FAQ</a>
 
-            <br><br><br><br>
+        <div class="contact-box">
+            <input type="checkbox" id="question1">
+            <label for="question1" class="contact-label">
+                <strong>How to return the order?</strong>
+                <span class="arrow">▼</span>
+            </label>
+            <div class="dane">
+                <p>You can return unused products free of charge within 30 days.</p>
+            </div>
+        </div>
+        <div class="contact-box">
+            <input type="checkbox" id="question2">
+            <label for="question2" class="contact-label">
+                <strong>When will I get my refund?</strong>
+                <span class="arrow">▼</span>
+            </label>
+            <div class="dane">
+                <p>The refund will be made within 14 days of the return shipment being handed over to the carrier. 
+                    The amount will be refunded via the payment method selected during the ordering process.</p>
+            </div>
+        </div>
+            <div class="question"></div>
+            <div class="question"></div>
+            <div class="question"></div>
+            <div class="question"></div>
+            <div class="question"></div>
+            <div class="question"></div>
+            <div class="question"></div>
+            <div class="question"></div>
+            <div class="question"></div>
+            <div class="question"></div>
+            <div class="question"></div>
+        </div>
 
+
+            <br><br><br><br>
+        <div class="button">
             <a href="/contact" class="btn btn-primary btn-lg">Contact us!</a>
         </div>
     </div>
