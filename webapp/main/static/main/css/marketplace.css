@@ -1,7 +1,35 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.d-flex {
+    display: flex;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 38px;
+    color: #343a40;
+}
+
 .marketplace-wrapper {
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 40px 20px;
+    max-width: 997px;
+    margin: 20px auto 20px auto; /* top and bottom margin */
+    padding: 30px 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .marketplace-title {
