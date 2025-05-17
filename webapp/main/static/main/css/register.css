@@ -3,12 +3,23 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+}
+
+main {
     display: flex;
     justify-content: center;
-    min-height: 100vh;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    flex-grow: 1;
 }
 
 .register-wrapper {
+    background-color: white;
+    max-width: 800px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
 }
 
@@ -20,15 +31,9 @@ h1 {
 }
 
 form {
-    background-color: white;
-    max-width: 800px;
-    width: 100%;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    width: 100%;
 }
 
 form .form-group {

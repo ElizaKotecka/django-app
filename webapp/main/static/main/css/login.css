@@ -3,13 +3,29 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
+}
+
+main {
     min-height: 100vh;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    flex-grow: 1;
+}
+
+main .container-sm {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 997px;
 }
 
 .form-container {
-    margin: 0 auto;
+    background-color: white;
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 0 auto
 }
 
 h1 {
@@ -20,15 +36,9 @@ h1 {
 }
 
 form {
-    background-color: white;
-    max-width: 400px;
-    width: 100%; /* Ensure form takes full width up to max-width */
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    width: 100%;
 }
 
 form .form-group {
