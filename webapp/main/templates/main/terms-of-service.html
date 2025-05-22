@@ -84,6 +84,22 @@
         .head h3{
             margin-top: 0;
         }
+
+        div#FAQContent{
+            width: 400px;
+            height: 0px;
+            display: none;
+            background-color: white;
+            padding: 30px;
+            transition: height 0.3s ease;
+            overflow: hidden;
+        }
+
+        button{
+            font-size: 30px;
+        }
+
+
     </style>
     <div class="features">
         <div class ="head">
@@ -361,9 +377,9 @@
 
         <br><br>
 
-        <div class="button" id="hide" onclick="show()">
-            <a class="btn btn-primary btn-lg">FAQ</a>
         
+        <button id="show" onclick="show()">FAQ</button>
+
         <br><br>
         
         <div id="FAQContent">
@@ -444,6 +460,7 @@
                     <p>We support: credit card; Paypal; cash; Przelwey4; BLIK.</p>
                 </div>
             </div>
+            <button id="hide" onclick="hide()">Hide</button>
         </div>
 
             <br><br><br><br>
@@ -451,6 +468,24 @@
             <a href="/contact" class="btn btn-primary btn-lg">Contact us!</a>
         </div>
     </div>
+
+
+    <script>
+        function show() {
+            const content = document.getElementById('FAQContent');
+            content.style.display = "block";
+            content.style.height = "auto" ;
+        }
+
+        function hide() {
+            const content = document.getElementById('FAQContent');
+            content.style.height = "0px";
+            // delay hiding after animation
+            setTimeout(() => {
+                content.style.display = "none";
+            }, 300); // match the CSS transition duration
+        }
+    </script>
 
 
 {% endblock %}
