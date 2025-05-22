@@ -86,7 +86,9 @@
         }
 
         div#FAQContent{
-            width: 400px;
+             width: 100%;
+            max-width: 800px; /* dopasuj do swojego layoutu */
+            margin: 0 auto; /* wycentruje */
             height: 0px;
             display: none;
             background-color: white;
@@ -96,7 +98,21 @@
         }
 
         button{
-            font-size: 30px;
+            font-size: 20px;
+            padding: 12px 24px;
+            background-color: rgb(0, 117, 235);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgb(69, 69, 84);
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+        }
+
+        button:hover{
+            background-color: #033393;
+            transform: scale(1.03);
         }
 
 
@@ -457,7 +473,7 @@
                     <span class="arrow">▼</span>
                 </label>
                 <div class="dane">
-                    <p>We support: credit card; Paypal; cash; Przelwey4; BLIK.</p>
+                    <p>We support: credit card; Paypal; cash; Przelewy24; BLIK.</p>
                 </div>
             </div>
             <button id="hide" onclick="hide()">Hide</button>
@@ -480,10 +496,10 @@
         function hide() {
             const content = document.getElementById('FAQContent');
             content.style.height = "0px";
-            // delay hiding after animation
+            // opóźnia animacje
             setTimeout(() => {
                 content.style.display = "none";
-            }, 300); // match the CSS transition duration
+            },);
         }
     </script>
 
