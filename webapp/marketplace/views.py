@@ -17,7 +17,7 @@ def marketplace_create(request):
     error = ''
 
     if request.method == 'POST':
-        form = PostsForm(request.POST)
+        form = PostsForm(request.POST, request.FILES)
         if form.is_valid():
             form.instance.owner = request.user
             form.save()
