@@ -24,8 +24,8 @@ def marketplace_create(request):
             return redirect('marketplace_home')
         else:
             error = 'Submitted form contain errors'
-
-    form = PostsForm()
+    else:
+        form = PostsForm()
 
     data = {
         'form': form,

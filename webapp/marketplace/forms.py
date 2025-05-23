@@ -11,7 +11,7 @@ class PostsForm(ModelForm):
             'title' : '',
             'excerpt': '',
             'body': '',
-            'piblished_at': '',
+            'published_at': '',
             'post_image':'',
         }
         # Blok widgets zajmuje się definicją pól w HTML. Tutaj można definiować typy wyświetlanych pół oraz zarządzać ich atrybutami.
