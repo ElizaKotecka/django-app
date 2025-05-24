@@ -7,13 +7,7 @@ class PostsForm(ModelForm):
         model = Posts
         fields = ['title', 'excerpt', 'body', 'published_at', 'post_image']
 
-        labels = {
-            'title' : '',
-            'excerpt': '',
-            'body': '',
-            'published_at': '',
-            'post_image':'',
-        }
+        
         # Blok widgets zajmuje się definicją pól w HTML. Tutaj można definiować typy wyświetlanych pół oraz zarządzać ich atrybutami.
         widgets = {
             'title': TextInput(attrs={'class': 'form-control', 'placeholder': 'Title'}),
