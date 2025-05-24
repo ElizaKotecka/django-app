@@ -1,8 +1,7 @@
 {% extends 'main/layout/layout.html' %}
-
 {% load static %}
 
-{% block title%}(#{{ post.id }}) {{ post.title }}{% endblock %}
+{% block title %}(#{{ post.id }}) {{ post.title }}{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'main/css/post.css' %}">
@@ -12,40 +11,24 @@
 <main>
     <div class="container-sm">
         <div class="post-wrapper">
-            {% if user.is_authenticated and user == post.owner %}
-                <div class="post-header">
-                    <h1 class="post-title">{{ post.title }}</h1>
-                    <div class="post-buttons">
-                        <a href="/marketplace/{{ post.id }}/update" class="btn btn-info">Update</a>
-                        <a href="/marketplace/{{ post.id }}/delete" class="btn btn-danger">Delete</a>
-                    </div>
-                </div>
-            {% else %}
+            <div class="post-header">
                 <h1 class="post-title">{{ post.title }}</h1>
-            {% endif %}
 
-            <p class="post-meta">Added by: {{ post.owner.username }}, {{ post.published_at|date:"d\.m\.Y l" }}</p>
+                {% if user.is_authenticated and user == post.owner %}
+                <div class="post-buttons">
+                    <a href="/marketplace/{{ post.id }}/update" class="btn btn-info">Update</a>
+                    <a href="/marketplace/{{ post.id }}/delete" class="btn btn-danger">Delete</a>
+                </div>
+                {% endif %}
+            </div>
+
+            <p class="post-meta">Added by: {{ post.owner.username }}, {{ post.published_at|date:"d.m.Y l" }}</p>
             <p class="post-body">{{ post.body }}</p>
+
+            {% if post.post_image %}
+            <img src="{{ post.post_image.url }}" alt="Post image" class="img-fluid rounded shadow" style="max-width: 300px; height: auto;">
+            {% endif %}
         </div>
     </div>
-    <div class="d-flex flex-column gap-4">
-        <p>Added by: {{post.owner.username}}, {{ post.published_at|date:"d\.m\.Y l" }}</p> 
-        <p>{{ post.body }}</p>
-        {% if post.post_image %}
-        <img src="{{ post.post_image.url }}" alt="Post image" class="img-fluid rounded shadow" style="max-width: 300px; height: auto;">
-        {% endif %}
-    </div>
-    {% else %}
-    <div class="d-flex flex-column gap-4">
-        <h1>(#{{ post.id }}) {{ post.title }}</h1>
-
-    <div class="d-flex flex-column gap-4">
-        <p>Added by: {{post.owner.username}}, {{ post.published_at|date:"d\.m\.Y l" }}</p> 
-        <p>{{ post.body }}</p>
-        {% if post.post_image %}
-        <img src="{{ post.post_image.url }}" alt="Post image" class="img-fluid rounded shadow" style="max-width: 300px; height: auto;">
-        {% endif %}
-    </div>
-    {% endif %}
 </main>
 {% endblock %}
