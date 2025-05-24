@@ -23,7 +23,10 @@ def login_view(request):
         form = AuthenticationForm(data = request.POST)
         if form.is_valid():
             login(request, form.get_user())
-            return redirect('home')
+            if 'next' in request.POST:
+                return redirect(request.POST.get('next'))
+            else:
+                return redirect('home')
     elif request.method == 'GET':
         form = AuthenticationForm()
     else:
