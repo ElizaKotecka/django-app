@@ -1,10 +1,14 @@
 from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from marketplace.models import Posts
 
 
-# Create your views here.
-def dashboard_home(request):
-    posts = Posts.objects.all().order_by('-published_at')
-    return render(request, 'dashboard/index.html', {'posts': posts})
+class PostListView(LoginRequiredMixin, ListView):
+    model = Posts
+    template_name = 'dashboard/index.html'
+    login_url = '/user/login/'
+
+    def get_queryset(self):
+        return Posts.objects.filter(owner=self.request.user).order_by('-published_at')
