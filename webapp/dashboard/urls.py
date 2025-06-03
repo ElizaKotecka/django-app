@@ -2,6 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.PostListView.as_view(), name='dashboard_home'),
+    path('', views.PostListView.as_view(), name='dashboard'),
 
 ]
