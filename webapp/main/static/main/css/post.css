@@ -1,0 +1,106 @@
+body {
+    background-color: #f4f4f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    min-height: 100vh;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    flex-grow: 1;
+}
+
+.container-sm {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 997px;
+}
+
+.post-wrapper {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 2rem 2.5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.post-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #222;
+    margin: 0;
+}
+
+.post-meta {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.post-body {
+    font-size: 1.1rem;
+    color: #3f3f3f;
+    line-height: 1.7;
+    white-space: pre-wrap;
+}
+
+.post-buttons a {
+    margin-left: 0.75rem;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+
+.btn-info,
+.btn-danger {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    color: white !important;
+    transition: background-color 0.2s ease;
+}
+
+.btn-info {
+    background-color: #1775da;
+}
+
+.btn-info:hover {
+    background-color: #094280;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #a71d2a;
+}
+
+@media (max-width: 768px) {
+    .post-title {
+        font-size: 1.8rem;
+    }
+
+    .post-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .post-buttons a {
+        margin-left: 0;
+        margin-right: 0.5rem;
+    }
+}
