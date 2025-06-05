@@ -84,6 +84,11 @@ h1 {
     color: #666;
 }
 
+.post-image {
+    display: flex;
+    justify-content: center;
+}
+
 /* Messages */
 .messages {
     list-style-type: none;
