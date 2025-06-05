@@ -9,17 +9,17 @@
 {% endblock %}
 
 {% block content %}
-<main>
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-            <li class="{{ message.tags }}">
-                {{ message }}
-            </li>
-        {% endfor %}
-    </ul>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+        <li class="{{ message.tags }}">
+            {{ message }}
+        </li>
+    {% endfor %}
+</ul>
 {% endif %}
-{% if user.is_authenticated and user == posts.owner %}
+<main>
+    {% if user.is_authenticated and user == posts.owner %}
     <div class="container-sm">
         <div class="form-wrapper">
             <h1 class="form-title">Update post</h1>
