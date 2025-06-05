@@ -34,9 +34,11 @@
             {% if posts %}
                 {% for post in posts %}
                 <div class="col-md-4 mb-4">
-                    <div class="card h-100">
+                    <div class="card d-flex flex-column h-100">
                         {% if post.post_image %}
-                        <img src="{{ post.post_image.url }}" class="card-img-top" alt="{{ post.title }}">
+                        <div class="img-wrapper">
+                            <img src="{{ post.post_image.url }}" class="card-img-top" alt="{{ post.title }}">
+                        </div>
                         {% else %}
                         <img src="{% static 'main/img/no-image-available.png' %}" class="card-img-top" alt="No image available">
                         {% endif %}
@@ -45,7 +47,7 @@
                             <p class="card-text">
                                 {{ post.excerpt|default:post.body|truncatewords:15 }}
                             </p>
-                            <a href="/marketplace/{{ post.id }}" class="btn btn-warning">View Product</a>
+                            <a href="/marketplace/{{ post.id }}" class="btn btn-warning mt-auto">View Product</a>
                         </div>
                     </div>
                 </div>
