@@ -30,15 +30,15 @@
     <!-- Featured Products Section -->
     <div class="mt-5 bg-light py-3">
         <h2 class="text-center best-deals-title">Discover the Latest Deals!</h2>
-        <div class="row mt-5">
+        <div class="row mt-5 align-items-stretch">
             {% if posts %}
                 {% for post in posts %}
-                <div class="col-md-4">
-                    <div class="card">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
                         {% if post.post_image %}
                         <img src="{{ post.post_image.url }}" class="card-img-top" alt="{{ post.title }}">
                         {% else %}
-                        <img src="{% static 'main/img/default_product.jpg' %}" class="card-img-top" alt="No image available">
+                        <img src="{% static 'main/img/no-image-available.png' %}" class="card-img-top" alt="No image available">
                         {% endif %}
                         <div class="card-body">
                             <h5 class="card-title">{{ post.title }}</h5>
