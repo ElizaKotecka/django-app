@@ -87,6 +87,8 @@ h1 {
 .post-image {
     display: flex;
     justify-content: center;
+    max-width: 300px;
+    height: auto;
 }
 
 /* Messages */
